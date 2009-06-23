@@ -1,0 +1,33 @@
+<?xml version="1.0"?><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="http://www.google.com/jsapi"></script>
+<script>google.load("jquery", "1");</script>
+<script src="jquery.selection-texts.js"></script>
+<script>//<![CDATA[
+(function ($) {
+  $(function () {
+    var doRun = function () {
+      var texts = $.selectionTexts();
+      var ul = $("#output").eq(0);
+      ul.empty();
+      for (var i = 0; i < texts.length; i += 1) {
+        ul.append("<li>" + texts[i] + "</li>");
+      }
+      setTimeout(doRun, 1000);    
+    };
+    doRun();
+  });
+})(jQuery);
+//]]></script>
+</head>
+
+<body>
+<ul id="output"></ul>
+
+<pre>
+The quick brown fox jumps over the lazy dog
+</pre>
+
+</body>
+</html>
